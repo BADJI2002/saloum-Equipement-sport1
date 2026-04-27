@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRCN ÉQUIPEMENT</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+    <!-- Barre de navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="PHOTO/logo%20brcn.png" alt="Logo BRCN">
+            <span>ÉQUIPEMENT</span>
+        </div>
+        <div class="cart-container">
+            <button class="cart-btn" onclick="afficherPanier()">
+                🛒
+                <span class="badge">0</span>
+            </button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#produits">Produits</a></li>
+            <li><a href="#apropos">À Propos</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- Burger menu pour mobile -->
+        <div class="burger">&#9776;</div>
+    </nav>
+
+    <!-- Hero section -->
+    <header class="hero">
+        <img src="PHOTO/tapis.jpeg" alt="Arts martiaux" class="hero-img">
+        <div class="hero-text">
+            <h1>Équipements & Matériels Arts Martiaux</h1>
+            <a href="#produits" class="btn">Voir les Produits</a>
+        </div>
+    </header>
+
+    <!-- Section Produits -->
+    <section id="produits" class="produits">
+        <div class="produits-header">
+            <h2 class="section-title">Notre Catalogue</h2>
+            <p class="section-subtitle">Découvrez notre sélection d'équipements de qualité pour les arts martiaux</p>
+        </div>
+
+        <!-- Filtres -->
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">
+                <i class="bi bi-grid"></i> Tous
+            </button>
+            <button class="filter-btn" data-filter="kimono">
+                <i class="bi bi-person"></i> Kimono
+            </button>
+            <button class="filter-btn" data-filter="equipement">
+                <i class="bi bi-shield"></i> Équipement
+            </button>
+            <button class="filter-btn" data-filter="materiels">
+                <i class="bi bi-tools"></i> Matériels
+            </button>
+        </div>
+
+        <!-- Catalogue -->
+        <div class="catalogue">
+            <div class="card" data-category="kimono" data-id="1">
+                <div class="card-image">
+                    <img src="PHOTO/KIMONO%20ROUGE-BLEU.PNG" alt="Kimono">
+                </div>
+                <div class="card-content">
+                    <h4>Kimono Premium</h4>
+                    <p>Kimono léger et résistant pour entraînement.</p>
+                    <div class="card-footer">
+                        <span class="prix">15 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(1)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-category="equipement" data-id="2">
+                <div class="card-image">
+                    <img src="PHOTO/gants%20bleu.png" alt="Gants">
+                </div>
+                <div class="card-content">
+                    <h4>Gants de Boxe</h4>
+                    <p>Protection optimale pour vos combats.</p>
+                    <div class="card-footer">
+                        <span class="prix">8 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(2)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-category="materiels" data-id="3">
+                <div class="card-image">
+                    <img src="PHOTO/SAC%20DE%20MATERIEL.jpg" alt="Sac de frappe">
+                </div>
+                <div class="card-content">
+                    <h4>Sac de Frappe</h4>
+                    <p>Idéal pour l'entraînement intensif.</p>
+                    <div class="card-footer">
+                        <span class="prix">25 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(3)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-category="kimono" data-id="4">
+                <div class="card-image">
+                    <img src="PHOTO/CEINTURE-karat%C3%A9.jpeg" alt="Ceinture">
+                </div>
+                <div class="card-content">
+                    <h4>Ceinture Karaté</h4>
+                    <p>Ceinture de qualité pour progression.</p>
+                    <div class="card-footer">
+                        <span class="prix">5 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(4)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-category="equipement" data-id="5">
+                <div class="card-image">
+                    <img src="PHOTO/gants%20rouge.png" alt="Gants rouge">
+                </div>
+                <div class="card-content">
+                    <h4>Gants Rouge</h4>
+                    <p>Gants résistants pour boxe.</p>
+                    <div class="card-footer">
+                        <span class="prix">8 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(5)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-category="equipement" data-id="6">
+                <div class="card-image">
+                    <img src="PHOTO/casque%20de%20portection.jpeg" alt="Casque">
+                </div>
+                <div class="card-content">
+                    <h4>Casque de Protection</h4>
+                    <p>Protection tête lors des combats.</p>
+                    <div class="card-footer">
+                        <span class="prix">12 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(6)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- À propos -->
+    <section id="apropos" class="apropos">
+        <h2>À Propos</h2>
+        <p>BRCN ÉQUIPEMENT est une entreprise dédiée à fournir des équipements de qualité pour les arts martiaux. Nous
+            sommes passionnés par les sports de combat et nous nous engageons à offrir les meilleurs produits pour aider
+            les pratiquants à atteindre leurs objectifs. Notre équipe est composée de professionnels expérimentés qui
+            comprennent les besoins des athlètes et s'efforcent de fournir un service client exceptionnel. Nous croyons
+            en la qualité, la durabilité et la performance de nos produits, et nous nous efforçons de maintenir des
+            normes élevées pour garantir la satisfaction de nos clients. Que vous soyez un débutant ou un athlète
+            confirmé dans les arts martiaux, BRCN ÉQUIPEMENT est votre partenaire de confiance pour tous vos besoins en
+            équipement.</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section-contact">
+        <h2 class="h2">Contactez-Nous</h2>
+        <div class="contacts">
+            <a href="https://wa.me/221779783473" class="contact-link"><i class="bi bi-whatsapp"></i></a>
+            <a href="https://instagram.com/saloum_equipment_sport" class="contact-link" target="_blank"><i
+                    class="bi bi-instagram"></i></a>
+            <a href="https://tiktok.com/@saloum_equipment_" class="contact-link" target="_blank"><i
+                    class="bi bi-tiktok"></i></a>
+        </div>
+        <form id="form-contact">
+            <input type="text" name="nom" placeholder="Votre nom" required>
+            <input type="email" name="email" placeholder="Votre email">
+            <textarea name="message" rows="5" placeholder="Votre message ou demande de devis"></textarea>
+            <button type="submit">Envoyer par WhatsApp</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 BRCN ÉQUIPEMENT. Tous droits réservés.</p>
+    </footer>
+
+</body>
+<script src="script.js"></script>
+
+</html>
