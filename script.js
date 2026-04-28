@@ -28,7 +28,7 @@ dots.forEach((dot, i) => {
         showSlide(i);
     });
 });
-
+ 
 // Données des produits
 const produits = [
     { id: 1, nom: "Kimono Premium", description: "Kimono léger et résistant pour entraînement.", prix: 15000, image: "PHOTO/KIMONO%20ROUGE-BLEU.PNG", categorie: "kimono" },

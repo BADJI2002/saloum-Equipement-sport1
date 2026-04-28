@@ -124,16 +124,9 @@ body {
     transform: translate(-50%, -50%);
     color: #fff;
     background: rgba(0, 0, 0, 0.5);
-    padding: 1rem;
-    border-radius: 8px;
-    z-index: 10;
+    padding: 1rem 2rem;
+    border-radius: 10px;
 }
-
-.hero-text h1 {
-    margin: 0 0 1rem 0;
-    font-size: 2rem;
-}
-
 .btn {
     background: #e63946;
     color: #fff;
@@ -421,6 +414,7 @@ body {
     right: 0;
     width: 200px;
     padding: 1rem;
+    z-index: 1000;
   }
 
   .nav-links.active {
@@ -429,6 +423,12 @@ body {
 
   .burger {
     display: block;             /* visible sur mobile */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
   }
 }
 
