@@ -1,3 +1,34 @@
+// Slider
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+let index = 0;
+
+function showSlide(n) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        dots[i].classList.remove('active');
+        if (i === n) {
+            slide.classList.add('active');
+            dots[i].classList.add('active');
+        }
+    });
+    index = n;
+}
+
+// Auto défilement
+function autoSlide() {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+}
+setInterval(autoSlide, 4000);
+
+// Navigation manuelle via les indicateurs
+dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+        showSlide(i);
+    });
+});
+
 // Données des produits
 const produits = [
     { id: 1, nom: "Kimono Premium", description: "Kimono léger et résistant pour entraînement.", prix: 15000, image: "PHOTO/KIMONO%20ROUGE-BLEU.PNG", categorie: "kimono" },
