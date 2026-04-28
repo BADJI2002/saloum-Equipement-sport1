@@ -559,12 +559,6 @@ body {
     font-size: 0.7rem;
 }
 
-@media (max-width: 420px) {
-    .catalogue {
-        grid-template-columns: 1fr;
-    }
-}
-
 @media (min-width: 421px) and (max-width: 768px) {
     .catalogue {
         grid-template-columns: repeat(2, 1fr);
