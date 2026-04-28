@@ -486,12 +486,12 @@ body {
 /* Version mobile très compacte */
 @media (max-width: 480px) {
     .catalogue {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
         gap: 0.5rem;
     }
 
     .card {
-        width: 100px;
+        width: 90px;
         /* largeur fixe réduite */
         min-height: 180px;
         /* hauteur réduite */
