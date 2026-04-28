@@ -69,6 +69,7 @@ body {
     font-size: 0.8rem;
     font-weight: bold;
 }
+
 .logo {
     display: flex;
     align-items: center;
@@ -78,6 +79,7 @@ body {
     height: 40px;
     margin-right: 0.2rem;
 }
+
 .logo span {
     font-size: 1.2rem;
     font-weight: bold;
@@ -116,8 +118,13 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .hero-text {
@@ -130,6 +137,7 @@ body {
     padding: 1rem 2rem;
     border-radius: 10px;
 }
+
 .btn {
     background: #e63946;
     color: #fff;
@@ -262,13 +270,13 @@ body {
     background: #fff;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .avantage-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .avantage-icon {
@@ -383,7 +391,7 @@ body {
     font-weight: 500;
     color: #34495e;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .filter-btn:hover {
@@ -402,79 +410,127 @@ body {
 }
 
 .catalogue {
-        display: grid;
-        gap: 1rem;
-        margin: 0 auto;
-        width: 100%;
-        max-width: 1200px;
-        padding: 0 0.5rem;
+    display: grid;
+    gap: 1rem;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 0.5rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 0.3rem;
+    min-height: 280px;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform 0.3s ease, opacity 0.6s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.card h3,
+.card p {
+    text-align: center;
+    margin: 0.2rem 0;
+}
+
+.card .prix {
+    font-weight: bold;
+    color: #e63946;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+.card .voir,
+.add-cart {
+    margin-top: auto;
+    padding: 0.3rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background: #111;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.card .voir:hover,
+.add-cart:hover {
+    background: #e63946;
+}
+
+/* Version mobile très compacte */
+@media (max-width: 480px) {
+    .catalogue {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 0.5rem;
     }
 
     .card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        padding: 1rem;
-        min-height: 320px;
-        width: 100%;
-        text-align: center;
-        overflow: hidden;
-        position: relative;
-        opacity: 0;
-        transform: translateY(30px);
-        transition: transform 0.3s ease, opacity 0.6s ease;
-    }
-
-    .card:hover {
-        transform: scale(1.02);
-    }
-
-    .card.show {
-        opacity: 1;
-        transform: translateY(0);
+        width: 100px;
+        /* largeur fixe réduite */
+        min-height: 180px;
+        /* hauteur réduite */
+        padding: 0.2rem;
     }
 
     .card img {
-        width: 100%;
-        height: auto;
-        max-height: 150px;
-        border-radius: 8px;
-        object-fit: cover;
+        max-height: 70px;
+        /* image proportionnelle */
     }
 
-    .card h3,
-    .card p {
-        text-align: center;
-        margin: 0.5rem 0;
+    .card-content h4 {
+        font-size: 0.7rem;
+        /* titre plus petit */
     }
 
-    .card .prix {
-        font-weight: bold;
-        color: #e63946;
-        font-size: 1rem;
-        margin: 0.5rem 0;
+    .card-content p {
+        font-size: 0.6rem;
+        /* description réduite */
+        line-height: 1.2;
     }
 
-    .card .voir,
+    .card-footer {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .prix {
+        font-size: 0.7rem;
+        /* prix réduit */
+    }
+
     .add-cart {
-        margin-top: auto;
-        padding: 0.5rem 1rem;
-        border: none;
-        border-radius: 5px;
-        background: #111;
-        color: #fff;
-        cursor: pointer;
-        transition: background 0.3s ease;
+        font-size: 0.6rem;
+        /* bouton plus petit */
+        padding: 0.2rem 0.5rem;
     }
-
-    .card .voir:hover,
-    .add-cart:hover {
-        background: #e63946;
-    }
+}
 
 /* À propos */
 .apropos {
@@ -510,31 +566,37 @@ body {
 
 /* Par défaut sur mobile, cacher le menu */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;              /* caché au départ */
-    flex-direction: column;     /* vertical */
-    background: #008fd7;        /* même couleur que la navbar */
-    position: absolute;
-    top: 60px;                  /* sous la barre */
-    right: 0;
-    width: 200px;
-    padding: 1rem;
-    z-index: 1000;
-  }
+    .nav-links {
+        display: none;
+        /* caché au départ */
+        flex-direction: column;
+        /* vertical */
+        background: #008fd7;
+        /* même couleur que la navbar */
+        position: absolute;
+        top: 60px;
+        /* sous la barre */
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+        z-index: 1000;
+    }
 
-  .nav-links.active {
-    display: flex;              /* affiché quand on clique */
-  }
+    .nav-links.active {
+        display: flex;
+        /* affiché quand on clique */
+    }
 
-  .burger {
-    display: block;             /* visible sur mobile */
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0.5rem;
-  }
+    .burger {
+        display: block;
+        /* visible sur mobile */
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+    }
 }
 
 /* Animation fade-in pour les cartes produits */
@@ -830,11 +892,11 @@ footer {
     flex-shrink: 0;
 }
 
-.option-paiement input:checked + .radio-custom {
+.option-paiement input:checked+.radio-custom {
     border-color: #3087eb;
 }
 
-.option-paiement input:checked + .radio-custom::after {
+.option-paiement input:checked+.radio-custom::after {
     content: '';
     position: absolute;
     top: 50%;

@@ -110,7 +110,7 @@ if (formContact) {
     const email = formContact.email.value;
     const message = formContact.message.value;
     const whatsappMessage = `Nom: ${nom}\nEmail: ${email}\nMessage: ${message}`;
-    const whatsappUrl = `https://wa.me/221779783473?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappUrl = `https://wa.me/+221762331406?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappUrl, '_blank');
   });
 }
@@ -345,7 +345,7 @@ function envoyerCommandeWhatsApp(donnees) {
     
     message += `\n💰 *Total:* ${donnees.total.toLocaleString('fr-FR')} CFA`;
     
-    const whatsappUrl = `https://wa.me/221779783473?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/+221762331406?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     
     panier = [];
