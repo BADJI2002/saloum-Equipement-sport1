@@ -486,8 +486,8 @@ body {
 /* Version mobile très compacte */
 @media (max-width: 480px) {
     .catalogue {
-        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-        gap: 0.5rem;
+        grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+        gap: 0.3rem;
     }
 
     .card {
