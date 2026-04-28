@@ -49,6 +49,21 @@ burger.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
 
+// Fermer le menu mobile après clic sur un lien
+const navLinkItems = document.querySelectorAll('.nav-links a');
+navLinkItems.forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+  });
+});
+
+// Fermer le menu mobile en cliquant ailleurs sur l'écran
+document.addEventListener('click', (e) => {
+  if (!navLinks.contains(e.target) && !burger.contains(e.target)) {
+    navLinks.classList.remove('active');
+  }
+});
+
 // Filtre produits
 const filterButtons = document.querySelectorAll('.filters button');
 const cards = document.querySelectorAll('.card');
@@ -302,6 +317,16 @@ function soumettreCommande(event) {
         total: total,
         articles: [...panier]
     };
+    
+    if (modePaiement === 'wave') {
+        const confirmation = confirm(`Vous avez choisi le paiement via Wave.\n\nAprès confirmation, vous serez redirigé vers Wave pour effectuer le paiement.\nLe lien de paiement vous sera également envoyé par WhatsApp.\n\nConfirmer la commande ?`);
+        if (!confirmation) {
+            return; // Annuler si pas confirmé
+        }
+        // Redirection simulée vers Wave (remplacer par vrai lien si disponible)
+        alert('Redirection vers Wave... (Lien de paiement à intégrer)');
+        // window.location.href = 'https://wave.com/pay'; // Exemple
+    }
     
     envoyerCommandeWhatsApp(donnees);
 }

@@ -16,8 +16,11 @@ body {
     align-content: center;
     align-items: center;
     padding: 1rem;
-    background: #aeb2b4;
+    background: #008fd7;
     color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .nav-links {
@@ -86,7 +89,7 @@ body {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
-    
+    background: #008fd7;
 }
 
 /* Hero */
@@ -216,6 +219,97 @@ body {
     .dot {
         width: 6px;
         height: 6px;
+    }
+}
+
+/* Section Avantages */
+.avantages {
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+.avantages .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.avantages .section-title {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.avantages .section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(45deg, #e63946, #ff6b6b);
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+.avantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.avantage-item {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avantage-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.avantage-icon {
+    font-size: 3rem;
+    color: #e63946;
+    margin-bottom: 1rem;
+}
+
+.avantage-item h3 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.avantage-item p {
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+/* Responsive Avantages */
+@media (max-width: 768px) {
+    .avantages {
+        padding: 3rem 1rem;
+    }
+
+    .avantages .section-title {
+        font-size: 2rem;
+    }
+
+    .avantages-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .avantage-item {
+        padding: 1.5rem;
+    }
+
+    .avantage-icon {
+        font-size: 2.5rem;
     }
 }
 
@@ -408,7 +502,7 @@ body {
   .nav-links {
     display: none;              /* caché au départ */
     flex-direction: column;     /* vertical */
-    background: #aeb2b4;        /* même couleur que la navbar */
+    background: #008fd7;        /* même couleur que la navbar */
     position: absolute;
     top: 60px;                  /* sous la barre */
     right: 0;
