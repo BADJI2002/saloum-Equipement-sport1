@@ -7,8 +7,10 @@ function showSlide(n) {
     slides.forEach((slide, i) => {
         slide.classList.remove('active');
         dots[i].classList.remove('active');
+        dots[i].classList.remove('active');
         if (i === n) {
             slide.classList.add('active');
+            dots[i].classList.add('active');
             dots[i].classList.add('active');
         }
     });
@@ -29,6 +31,12 @@ dots.forEach((dot, i) => {
     });
 });
  
+
+
+
+
+
+
 // Données des produits
 const produits = [
   // Kimono
@@ -78,7 +86,13 @@ const produits = [
     { id: 14, nom: "ensenble kimono kumité arawaza zoro bleu et rouge ", description: "Équipement de qualité pour arts martiaux.", prix: 105000, image: "PHOTO/ensenble kimono kumité arawaza zoro bleu et rouge.jpeg", categorie: "ensemble" },
     { id: 15, nom: "ensenble tibia arawaza bleu et rouge", description: "Équipement de qualité pour arts martiaux.", prix: 30000, image: "PHOTO/ensenble tibia arawaza bleu et rouge.jpeg", categorie: "ensemble" },
     { id: 42, nom: "ensemble-kimono-shureido-rouge-et-bleue", description: "Équipement de qualité pour arts martiaux.", prix: 150000, image: "PHOTO/ensemble-kimono-shureido-rouge-et-bleue.jpg", categorie: "ensemble" },
-    { id: 43, nom: "ensemble dégresseur unisexe", description: "Équipement de qualité pour arts martiaux.", prix: 10000, image: "PHOTO/ensemble dégresseur unisexe.jpeg", categorie: "ensemble" }
+    { id: 43, nom: "ensemble dégresseur unisexe", description: "Équipement de qualité pour arts martiaux.", prix: 10000, image: "PHOTO/ensemble dégresseur unisexe.jpeg", categorie: "ensemble" },
+
+    // Ensemble Promotions & Offres Spéciales
+    { id: 100, nom: "Pack Débutant", description: "Kimono + Ceinture + Gants", prix: 25000, image: "PHOTO/menu1.png", categorie: "ensemble" },
+    { id: 101, nom: "Pack Combat", description: "Kimono + Gants + Protège-tibia", prix: 40000, image: "PHOTO/menu2.png", categorie: "ensemble" },
+    { id: 102, nom: "Nouvelle Arrivée", description: "Kimono Tokaido édition limitée", prix: 35000, image: "PHOTO/menu3.png", categorie: "ensemble" },
+
 ];
 
 

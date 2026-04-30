@@ -36,8 +36,9 @@
     <!-- Hero section -->
     <header class="hero">
         <div class="slider">
-            <img src="PHOTO/acceuil2.png" alt="acceuil" class="slide active">
-            <img src="PHOTO/acceuil3.png" alt="accuil" class="slide">
+            <img src="PHOTO/menu1.png" alt="acceuil" class="slide active">
+            <img src="PHOTO/menu2.png" alt="accuil" class="slide">
+            <img src="PHOTO/menu3.png" alt="accuil" class="slide">
         </div>
         <div class="hero-text">
             <a href="#produits" class="btn">Voir les Produits</a>
@@ -87,6 +88,41 @@
         </div>
     </section>
 
+    <!-- Section Promotions & Offres Spéciales -->
+    <section class="promo-section">
+        <h2>🔥 Nos Packs & Promotions</h2>
+        <div class="promo-container">
+            <div class="promo-card" data-id="100">
+                <img src="PHOTO/menu1.png" alt="Pack Débutant">
+                <h3>Pack Débutant</h3>
+                <p>Kimono + Ceinture + Gants</p>
+                <span class="prix">25 000 CFA</span>
+                <button class="add-cart" onclick="ajouterAuPanier(100)">
+                    <i class="bi bi-cart-plus"></i> Ajouter
+                </button>
+            </div>
+            <div class="promo-card" data-id="101">
+                <img src="PHOTO/menu2.png" alt="Pack Combat">
+                <h3>Pack Combat</h3>
+                <p>Kimono + Gants + Protège-tibia</p>
+                <span class="prix">40 000 CFA</span>
+                <button class="add-cart" onclick="ajouterAuPanier(101)">
+                    <i class="bi bi-cart-plus"></i> Ajouter
+                </button>
+            </div>
+            <div class="promo-card" data-id="102">
+                <img src="PHOTO/menu3.png" alt="Nouvelle arrivée">
+                <h3>Nouvelle Arrivée</h3>
+                <p>Kimono Tokaido édition limitée</p>
+                <span class="prix">35 000 CFA</span>
+                <button class="add-cart" onclick="ajouterAuPanier(102)">
+                    <i class="bi bi-cart-plus"></i> Ajouter
+                </button>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Section Produits -->
     <section id="produits" class="produits">
         <div class="produits-header">
@@ -99,7 +135,7 @@
             <button class="filter-btn active" data-filter="all">
                 <i class="bi bi-grid"></i> Tous
             </button>
-            <button class="filter-btn" data-filter="kimono">  
+            <button class="filter-btn" data-filter="kimono">
                 <i class="bi bi-person"></i> Kimono
             </button>
 
@@ -344,8 +380,8 @@
                         alt="ensenble tibia arawaza bleu et rouge">
                 </div>
                 <div class="card-content">
-                    <h4>ensenble tibia arawaza  bleu et rouge</h4>
-                    <p>tibia arawaza  bleu et rouge double étiquette.</p>
+                    <h4>ensenble tibia arawaza bleu et rouge</h4>
+                    <p>tibia arawaza bleu et rouge double étiquette.</p>
                     <div class="card-footer">
                         <span class="prix">30 000 CFA</span>
                         <button class="add-cart" onclick="ajouterAuPanier(15)">
@@ -798,7 +834,8 @@
             <!-- Produit 42 -->
             <div class="card" data-category="ensemble" data-id="42">
                 <div class="card-image">
-                    <img src="PHOTO/ensemble-kimono-shureido-rouge-et-bleue.jpg" alt="ensemble-kimono-shureido-rouge-et-bleue">
+                    <img src="PHOTO/ensemble-kimono-shureido-rouge-et-bleue.jpg"
+                        alt="ensemble-kimono-shureido-rouge-et-bleue">
                 </div>
                 <div class="card-content">
                     <h4>ensemble-kimono-shureido-rouge-et-bleue</h4>
@@ -811,7 +848,7 @@
                     </div>
                 </div>
             </div>
-             <!-- Produit 43 -->
+            <!-- Produit 43 -->
             <div class="card" data-category="ensemble" data-id="43">
                 <div class="card-image">
                     <img src="PHOTO/ensemble dégresseur unisexe.jpeg" alt="ensemble dégresseur unisexe">
