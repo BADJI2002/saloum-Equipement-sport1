@@ -99,16 +99,22 @@
             <button class="filter-btn active" data-filter="all">
                 <i class="bi bi-grid"></i> Tous
             </button>
-            <button class="filter-btn" data-filter="kimono">
+            <button class="filter-btn" data-filter="kimono">  
                 <i class="bi bi-person"></i> Kimono
             </button>
-            <button class="filter-btn" data-filter="equipement">
-                <i class="bi bi-shield"></i> Équipement
+
+            <button class="filter-btn" data-filter="protection">
+                <i class="bi bi-shield"></i> Protection
             </button>
-            <button class="filter-btn" data-filter="materiels">
-                <i class="bi bi-tools"></i> Matériels
+
+            <button class="filter-btn" data-filter="materiel">
+                <i class="bi bi-tools"></i> Matériel
+            </button>
+            <button class="filter-btn" data-filter="ensemble">
+                <i class="bi bi-collection"></i> Ensemble
             </button>
         </div>
+
 
         <!-- Catalogue -->
         <div class="catalogue">
@@ -117,7 +123,7 @@
                     <img src="PHOTO/KIMONO%20ROUGE-BLEU.PNG" alt="Kimono">
                 </div>
                 <div class="card-content">
-                    <h4>Kimono Premium</h4>
+                    <h4>Kimono simple</h4>
                     <p>Kimono léger et résistant pour entraînement.</p>
                     <div class="card-footer">
                         <span class="prix">15 000 CFA</span>
@@ -128,15 +134,15 @@
                 </div>
             </div>
 
-            <div class="card" data-category="equipement" data-id="2">
+            <div class="card" data-category="protection" data-id="2">
                 <div class="card-image">
                     <img src="PHOTO/gants%20bleu.png" alt="Gants">
                 </div>
                 <div class="card-content">
-                    <h4>Gants de Boxe</h4>
+                    <h4>Gants arawaza bleu simple</h4>
                     <p>Protection optimale pour vos combats.</p>
                     <div class="card-footer">
-                        <span class="prix">8 000 CFA</span>
+                        <span class="prix">9 000 CFA</span>
                         <button class="add-cart" onclick="ajouterAuPanier(2)">
                             <i class="bi bi-cart-plus"></i> Ajouter
                         </button>
@@ -144,61 +150,678 @@
                 </div>
             </div>
 
-            <div class="card" data-category="materiels" data-id="3">
+            <div class="card" data-category="materiel" data-id="3">
                 <div class="card-image">
                     <img src="PHOTO/SAC%20DE%20MATERIEL.jpg" alt="Sac de frappe">
                 </div>
                 <div class="card-content">
-                    <h4>Sac de Frappe</h4>
-                    <p>Idéal pour l'entraînement intensif.</p>
+                    <h4>Sac d'équipement</h4>
+                    <p>Idéal pour l'entraînement et compétition.</p>
                     <div class="card-footer">
-                        <span class="prix">25 000 CFA</span>
+                        <span class="prix">10 000 CFA</span>
                         <button class="add-cart" onclick="ajouterAuPanier(3)">
                             <i class="bi bi-cart-plus"></i> Ajouter
                         </button>
                     </div>
                 </div>
             </div>
-            <div class="card" data-category="kimono" data-id="4">
+            <div class="card" data-category="ensemble" data-id="4">
                 <div class="card-image">
                     <img src="PHOTO/CEINTURE-karat%C3%A9.jpeg" alt="Ceinture">
                 </div>
                 <div class="card-content">
-                    <h4>Ceinture Karaté</h4>
-                    <p>Ceinture de qualité pour progression.</p>
+                    <h4>ensemble Ceinture arawaza</h4>
+                    <p>ensemble Ceinture kumite bleu et rouge pour compétition.</p>
                     <div class="card-footer">
-                        <span class="prix">5 000 CFA</span>
+                        <span class="prix">7 000 CFA</span>
                         <button class="add-cart" onclick="ajouterAuPanier(4)">
                             <i class="bi bi-cart-plus"></i> Ajouter
                         </button>
                     </div>
                 </div>
             </div>
-            <div class="card" data-category="equipement" data-id="5">
+            <div class="card" data-category="protection" data-id="5">
                 <div class="card-image">
                     <img src="PHOTO/gants%20rouge.png" alt="Gants rouge">
                 </div>
                 <div class="card-content">
-                    <h4>Gants Rouge</h4>
-                    <p>Gants résistants pour boxe.</p>
+                    <h4>Gants Smai Rouge</h4>
+                    <p>Gants Smai Rouge simple pour combat </p>
                     <div class="card-footer">
-                        <span class="prix">8 000 CFA</span>
+                        <span class="prix">9 000 CFA</span>
                         <button class="add-cart" onclick="ajouterAuPanier(5)">
                             <i class="bi bi-cart-plus"></i> Ajouter
                         </button>
                     </div>
                 </div>
             </div>
-            <div class="card" data-category="equipement" data-id="6">
+            <div class="card" data-category="protection" data-id="6">
                 <div class="card-image">
-                    <img src="PHOTO/casque%20de%20portection.jpeg" alt="Casque">
+                    <img src="PHOTO/casque de portection.jpeg" alt="Casque">
                 </div>
                 <div class="card-content">
                     <h4>Casque de Protection</h4>
                     <p>Protection tête lors des combats.</p>
                     <div class="card-footer">
-                        <span class="prix">12 000 CFA</span>
+                        <span class="prix">10 000 CFA</span>
                         <button class="add-cart" onclick="ajouterAuPanier(6)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nouveaux produits -->
+            <div class="card" data-category="protection" data-id="7">
+                <div class="card-image">
+                    <img src="PHOTO/5protege tibia bleu.png" alt="5protege tibia bleu">
+                </div>
+                <div class="card-content">
+                    <h4>protege tibia bleu</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">15 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(7)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-category="materiel" data-id="8">
+                <div class="card-image">
+                    <img src="PHOTO/cible manequin.jpeg" alt="cible manequin">
+                </div>
+                <div class="card-content">
+                    <h4>cible manequin</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">120 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(8)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-category="ensemble" data-id="9">
+                <div class="card-image">
+                    <img src="PHOTO/ensembe kimono kumité smai.webp" alt="ensembe kimono kumité smai">
+                </div>
+                <div class="card-content">
+                    <h4>ensembe kimono kumité smai</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">100 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(9)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-category="ensemble" data-id="10">
+                <div class="card-image">
+                    <img src="PHOTO/ensemble kimono kata arawaza bleu et rouge.jpeg"
+                        alt="ensemble kimono kata arawaza bleu et rouge">
+                </div>
+                <div class="card-content">
+                    <h4>ensemble kimono kata arawaza bleu et rouge</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">150 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(10)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-category="ensemble" data-id="11">
+                <div class="card-image">
+                    <img src="PHOTO/ensemble Kimono Kata SMAI bleu et rouge.jpg"
+                        alt="ensemble Kimono Kata SMAI bleu et rouge">
+                </div>
+                <div class="card-content">
+                    <h4>ensemble Kimono Kata SMAI bleu et rouge</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">150 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(11)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-category="ensemble" data-id="12">
+                <div class="card-image">
+                    <img src="PHOTO/ensemble Kimono Kata tokaido bleu et rouge.jfif"
+                        alt="ensemble Kimono Kata tokaido bleu et rouge">
+                </div>
+                <div class="card-content">
+                    <h4>ensemble Kimono Kata tokaido bleu et rouge</h4>
+                    <p>Équipement Asc de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">150 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(12)">
+                            <i class="bi bi-cart Asc -plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-category="ensemble" data-id="13">
+                <div class="card-image">
+                    <img src="PHOTO/ensemble kimono kumite tokaido bleu et rouge.jpg"
+                        alt="ensemble kimono kumite tokaido bleu et rouge">
+                </div>
+                <div class="card-content">
+                    <h4>ensemble kimono kumite tokaido bleu et rouge</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">100 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(13)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-category="ensemble" data-id="14">
+                <div class="card-image">
+                    <img src="PHOTO/ensenble kimono kumité arawaza zoro bleu et rouge.jpeg"
+                        alt="ensenble kimono kumité arawaza zoro bleu et rouge">
+                </div>
+                <div class="card-content">
+                    <h4>ensenble kimono kumité arawaza zoro bleu et rouge</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">105 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(14)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Produit 15 -->
+            <div class="card" data-category="ensemble" data-id="15">
+                <div class="card-image">
+                    <img src="PHOTO/ensenble tibia arawaza bleu et rouge.jpeg"
+                        alt="ensenble tibia arawaza bleu et rouge">
+                </div>
+                <div class="card-content">
+                    <h4>ensenble tibia arawaza  bleu et rouge</h4>
+                    <p>tibia arawaza  bleu et rouge double étiquette.</p>
+                    <div class="card-footer">
+                        <span class="prix">30 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(15)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 16 -->
+            <div class="card" data-category="protection" data-id="16">
+                <div class="card-image">
+                    <img src="PHOTO/gant arawaza 2etiquette bleu.jpg" alt="gant arawaza 2etiquette bleu">
+                </div>
+                <div class="card-content">
+                    <h4>gant arawaza 2etiquette bleu</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">9 500 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(16)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 17 -->
+            <div class="card" data-category="protection" data-id="17">
+                <div class="card-image">
+                    <img src="PHOTO/gant smai 2etiquette bleu.webp" alt="gant smai 2etiquette bleu">
+                </div>
+                <div class="card-content">
+                    <h4>gant smai 2etiquette bleu</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">9 500 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(17)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 18 -->
+            <div class="card" data-category="protection" data-id="18">
+                <div class="card-image">
+                    <img src="PHOTO/gant smai 2etiquette rouge.webp" alt="gant smai 2etiquette rouge">
+                </div>
+                <div class="card-content">
+                    <h4>gant smai 2etiquette rouge</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">9 500 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(18)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 19 -->
+            <div class="card" data-category="protection" data-id="19">
+                <div class="card-image">
+                    <img src="PHOTO/gant-arawaza 2etiquette rouge.jpg" alt="gant-arawaza 2etiquette rouge">
+                </div>
+                <div class="card-content">
+                    <h4>gant-arawaza 2 étiquette rouge</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">9 500 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(19)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 20 -->
+            <div class="card" data-category="protection" data-id="20">
+                <div class="card-image">
+                    <img src="PHOTO/gant-arawaza simple blue.jpg" alt="gant-arawaza simple blue">
+                </div>
+                <div class="card-content">
+                    <h4>gant-arawaza simple blue</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">9 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(20)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 21 -->
+            <div class="card" data-category="protection" data-id="21">
+                <div class="card-image">
+                    <img src="PHOTO/gant-arawaza simple rouge.jpg" alt="gant-arawaza simple rouge">
+                </div>
+                <div class="card-content">
+                    <h4>gant-arawaza simple rouge</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">9 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(21)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 22 -->
+            <div class="card" data-category="protection" data-id="22">
+                <div class="card-image">
+                    <img src="PHOTO/gants BRCN.png" alt="gants BRCN">
+                </div>
+                <div class="card-content">
+                    <h4>gants BRCN</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">9 500 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(22)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 23 -->
+            <div class="card" data-category="kimono" data-id="23">
+                <div class="card-image">
+                    <img src="PHOTO/kimono BRCN kata bleu.jpeg" alt="kimono BRCN kata bleu">
+                </div>
+                <div class="card-content">
+                    <h4>kimono BRCN kata bleu</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">45 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(23)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 24 -->
+            <div class="card" data-category="kimono" data-id="24">
+                <div class="card-image">
+                    <img src="PHOTO/kimono BRCN kata rouge.jpeg" alt="kimono BRCN kata rouge">
+                </div>
+                <div class="card-content">
+                    <h4>kimono BRCN kata rouge</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">45 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(24)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 25 -->
+            <div class="card" data-category="kimono" data-id="25">
+                <div class="card-image">
+                    <img src="PHOTO/kimono BRCN kumite recto-verso.jpeg" alt="kimono BRCN kumite recto-verso">
+                </div>
+                <div class="card-content">
+                    <h4>kimono BRCN kumite recto-verso</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">45 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(25)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 26 -->
+            <div class="card" data-category="kimono" data-id="26">
+                <div class="card-image">
+                    <img src="PHOTO/kimono kata arawaza black Diamond.jpg" alt="kimono kata arawaza black Diamond">
+                </div>
+                <div class="card-content">
+                    <h4>kimono kata arawaza black Diamond</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">75 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(26)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 27 -->
+            <div class="card" data-category="kimono" data-id="27">
+                <div class="card-image">
+                    <img src="PHOTO/kimono SMA blanc.jpeg" alt="kimono SMA blanc">
+                </div>
+                <div class="card-content">
+                    <h4>kimono SMA blanc</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">75 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(27)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 28 -->
+            <div class="card" data-category="kimono" data-id="28">
+                <div class="card-image">
+                    <img src="PHOTO/kimono SMA rouge.jpeg" alt="kimono SMA rouge">
+                </div>
+                <div class="card-content">
+                    <h4>kimono SMA rouge</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">75 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(28)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 29 -->
+            <div class="card" data-category="kimono" data-id="29">
+                <div class="card-image">
+                    <img src="PHOTO/kimono SMAI bleu.jpeg" alt="kimono SMAI bleu">
+                </div>
+                <div class="card-content">
+                    <h4>kimono SMAI bleu</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">75 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(29)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 30 -->
+            <div class="card" data-category="kimono" data-id="30">
+                <div class="card-image">
+                    <img src="PHOTO/kimono tokaido bleu.jpeg" alt="kimono tokaido bleu">
+                </div>
+                <div class="card-content">
+                    <h4>kimono tokaido bleu</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">75 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(30)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 31 -->
+            <div class="card" data-category="kimono" data-id="31">
+                <div class="card-image">
+                    <img src="PHOTO/kimono tokaido roure.jpeg" alt="kimono tokaido roure">
+                </div>
+                <div class="card-content">
+                    <h4>kimono tokaido roure</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">75 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(31)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 32 -->
+            <div class="card" data-category="protection" data-id="32">
+                <div class="card-image">
+                    <img src="PHOTO/protection pastron femme arawaza.jpeg" alt="protection pastron femme arawaza">
+                </div>
+                <div class="card-content">
+                    <h4>protection pastron femme arawaza</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">15 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(32)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 33 -->
+            <div class="card" data-category="protection" data-id="33">
+                <div class="card-image">
+                    <img src="PHOTO/protection pastron femme smai.jpeg" alt="protection pastron femme smai">
+                </div>
+                <div class="card-content">
+                    <h4>protection pastron femme smai</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">15 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(33)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 34 -->
+            <div class="card" data-category="protection" data-id="34">
+                <div class="card-image">
+                    <img src="PHOTO/protege dent onix.jpeg" alt="protege dent onix">
+                </div>
+                <div class="card-content">
+                    <h4>protege dent onix</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">3 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(34)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 35 -->
+            <div class="card" data-category="protection" data-id="35">
+                <div class="card-image">
+                    <img src="PHOTO/protege plaston homme SMAi.jpeg" alt="protege plaston homme SMAi">
+                </div>
+                <div class="card-content">
+                    <h4>protege plaston homme SMAi</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">15 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(35)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 36 -->
+            <div class="card" data-category="protection" data-id="36">
+                <div class="card-image">
+                    <img src="PHOTO/protege tibia  roure.jpeg" alt="protege tibia roure">
+                </div>
+                <div class="card-content">
+                    <h4>protege tibia roure</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">15 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(36)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 37 -->
+            <div class="card" data-category="protection" data-id="37">
+                <div class="card-image">
+                    <img src="PHOTO/protege tibia bleu.jpeg" alt="protege tibia bleu">
+                </div>
+                <div class="card-content">
+                    <h4>protege tibia bleu</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">15 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(37)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 38 -->
+            <div class="card" data-category="protection" data-id="38">
+                <div class="card-image">
+                    <img src="PHOTO/protège-DENT.png" alt="protège-DENT">
+                </div>
+                <div class="card-content">
+                    <h4>protège-DENT</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">3 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(38)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 39 -->
+            <div class="card" data-category="equipement" data-id="39">
+                <div class="card-image">
+                    <img src="PHOTO/tapis.jpeg" alt="tapis">
+                </div>
+                <div class="card-content">
+                    <h4>tapis</h4>
+                    <p>1 mettre carré de tapis arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">10 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(39)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Produit 40 -->
+            <div class="card" data-category="kimono" data-id="40">
+                <div class="card-image">
+                    <img src="PHOTO/kimono-kata-shureidode-bleu.webp" alt="kimono-kata-shureidode-bleu">
+                </div>
+                <div class="card-content">
+                    <h4>kimono-kata-shureidode-bleu</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">75 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(40)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 41 -->
+            <div class="card" data-category="kimono" data-id="41">
+                <div class="card-image">
+                    <img src="PHOTO/kimono-kata-shureidode-rouge.jpg" alt="kimono-kata-shureidode-rouge">
+                </div>
+                <div class="card-content">
+                    <h4>kimono-kata-shureidode-rouge</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">75 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(41)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Produit 42 -->
+            <div class="card" data-category="ensemble" data-id="42">
+                <div class="card-image">
+                    <img src="PHOTO/ensemble-kimono-shureido-rouge-et-bleue.jpg" alt="ensemble-kimono-shureido-rouge-et-bleue">
+                </div>
+                <div class="card-content">
+                    <h4>ensemble-kimono-shureido-rouge-et-bleue</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">150 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(42)">
+                            <i class="bi bi-cart-plus"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+             <!-- Produit 43 -->
+            <div class="card" data-category="ensemble" data-id="43">
+                <div class="card-image">
+                    <img src="PHOTO/ensemble dégresseur unisexe.jpeg" alt="ensemble dégresseur unisexe">
+                </div>
+                <div class="card-content">
+                    <h4>ensemble dégresseur unisexe</h4>
+                    <p>Équipement de qualité pour arts martiaux.</p>
+                    <div class="card-footer">
+                        <span class="prix">10 000 CFA</span>
+                        <button class="add-cart" onclick="ajouterAuPanier(43)">
                             <i class="bi bi-cart-plus"></i> Ajouter
                         </button>
                     </div>
@@ -227,8 +850,7 @@
             <a href="https://wa.me/+221762331406" class="contact-link"><i class="bi bi-whatsapp"></i></a>
             <a href="https://instagram.com/221brcn" class="contact-link" target="_blank"><i
                     class="bi bi-instagram"></i></a>
-            <a href="https://tiktok.com/@brcn211" class="contact-link" target="_blank"><i
-                    class="bi bi-tiktok"></i></a>
+            <a href="https://tiktok.com/@brcn211" class="contact-link" target="_blank"><i class="bi bi-tiktok"></i></a>
         </div>
         <form id="form-contact">
             <input type="text" name="nom" placeholder="Votre nom" required>

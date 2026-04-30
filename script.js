@@ -31,13 +31,56 @@ dots.forEach((dot, i) => {
  
 // Données des produits
 const produits = [
-    { id: 1, nom: "Kimono Premium", description: "Kimono léger et résistant pour entraînement.", prix: 15000, image: "PHOTO/KIMONO%20ROUGE-BLEU.PNG", categorie: "kimono" },
-    { id: 2, nom: "Gants de Boxe", description: "Protection optimale pour vos combats.", prix: 8000, image: "PHOTO/gants%20bleu.png", categorie: "equipement" },
-    { id: 3, nom: "Sac de Frappe", description: "Idéal pour l'entraînement intensif.", prix: 25000, image: "PHOTO/SAC%20DE%20MATERIEL.jpg", categorie: "materiels" },
-    { id: 4, nom: "Ceinture Karaté", description: "Ceinture de qualité pour progression.", prix: 5000, image: "PHOTO/CEINTURE-karat%C3%A9.jpeg", categorie: "kimono" },
-    { id: 5, nom: "Gants Rouge", description: "Gants résistants pour boxe.", prix: 9000, image: "PHOTO/gants%20rouge.png", categorie: "equipement" },
-    { id: 6, nom: "Casque de Protection", description: "Protection tête lors des combats.", prix: 12000, image: "PHOTO/casque%20de%20portection.jpeg", categorie: "equipement" }
+  // Kimono
+  { id: 1, nom: "Kimono simple", description: "Kimono léger et résistant pour entraînement.", prix: 15000, image: "PHOTO/KIMONO%20ROUGE-BLEU.PNG", categorie: "kimono" },
+  { id: 23, nom: "kimono BRCN kata bleu", description: "Équipement de qualité pour arts martiaux.", prix: 45000, image: "PHOTO/kimono BRCN kata bleu.jpeg", categorie: "kimono" },
+  { id: 24, nom: "kimono BRCN kata rouge", description: "Équipement de qualité pour arts martiaux.", prix: 45000, image: "PHOTO/kimono BRCN kata rouge.jpeg", categorie: "kimono" },
+  { id: 27, nom: "kimono SMA blanc", description: "Équipement de qualité pour arts martiaux.", prix: 75000, image: "PHOTO/kimono SMA blanc.jpeg", categorie: "kimono" },
+  { id: 28, nom: "kimono SMA rouge", description: "Équipement de qualité pour arts martiaux.", prix: 75000, image: "PHOTO/kimono SMA rouge.jpeg", categorie: "kimono" },
+  { id: 29, nom: "kimono SMAI bleu", description: "Équipement de qualité pour arts martiaux.", prix: 75000, image: "PHOTO/kimono SMAI bleu.jpeg", categorie: "kimono" },
+  { id: 30, nom: "kimono tokaido bleu", description: "Équipement de qualité pour arts martiaux.", prix: 75000, image: "PHOTO/kimono tokaido bleu.jpeg", categorie: "kimono" },
+  { id: 31, nom: "kimono tokaido roure", description: "Équipement de qualité pour arts martiaux.", prix: 75000, image: "PHOTO/kimono tokaido roure.jpeg", categorie: "kimono" },
+  { id: 40, nom: "kimono-kata-shureidode-bleu", description: "Équipement de qualité pour arts martiaux.", prix: 75000, image: "PHOTO/kimono-kata-shureidode-bleu.webp", categorie: "kimono" },
+  { id: 41, nom: "kimono-kata-shureidode-rouge", description: "Équipement de qualité pour arts martiaux.", prix: 75000, image: "PHOTO/kimono-kata-shureidode-rouge.jpg", categorie: "kimono" },
+
+  // Protection
+  { id: 2, nom: "Gants arawaza simple", description: "Protection optimale pour vos combats.", prix: 9000, image: "PHOTO/gants%20bleu.png", categorie: "protection" },
+  { id: 5, nom: "Gants smail simple Rouge", description: "Gants résistants pour karaté.", prix: 9000, image: "PHOTO/gants%20rouge.png", categorie: "protection" },
+  { id: 6, nom: "Casque de Protection", description: "Protection tête lors des combats.", prix: 10000, image: "PHOTO/casque de portection.jpeg", categorie: "protection" },
+  { id: 7, nom: "protege tibia bleu", description: "Équipement de qualité pour arts martiaux.", prix: 15000, image: "PHOTO/5protege tibia bleu.png", categorie: "protection" },
+  { id: 16, nom: "gant arawaza 2etiquette bleu", description: "Équipement de qualité pour arts martiaux.", prix: 9500, image: "PHOTO/gant arawaza 2etiquette bleu.jpg", categorie: "protection" },
+  { id: 17, nom: "gant smai 2etiquette bleu", description: "Équipement de qualité pour arts martiaux.", prix: 9500, image: "PHOTO/gant smai 2etiquette bleu.webp", categorie: "protection" },
+  { id: 18, nom: "gant smai 2etiquette rouge", description: "Équipement de qualité pour arts martiaux.", prix: 9500, image: "PHOTO/gant smai 2etiquette rouge.webp", categorie: "protection" },
+  { id: 19, nom: "gant-arawaza 2etiquette rouge", description: "Équipement de qualité pour arts martiaux.", prix: 9500, image: "PHOTO/gant-arawaza 2etiquette rouge.jpg", categorie: "protection" },
+  { id: 20, nom: "gant-arawaza simple blue", description: "Équipement de qualité pour arts martiaux.", prix: 9000, image: "PHOTO/gant-arawaza simple blue.jpg", categorie: "protection" },
+  { id: 21, nom: "gant-arawaza simple rouge", description: "Équipement de qualité pour arts martiaux.", prix: 9000, image: "PHOTO/gant-arawaza simple rouge.jpg", categorie: "protection" },
+  { id: 22, nom: "gants BRCN", description: "Équipement de qualité pour arts martiaux.", prix: 9500, image: "PHOTO/gants BRCN.png", categorie: "protection" },
+  { id: 32, nom: "protection pastron femme arawaza", description: "Équipement de qualité pour arts martiaux.", prix: 15000, image: "PHOTO/protection pastron femme arawaza.jpeg", categorie: "protection" },
+  { id: 33, nom: "protection pastron femme smai", description: "Équipement de qualité pour arts martiaux.", prix: 15000, image: "PHOTO/protection pastron femme smai.jpeg", categorie: "protection" },
+  { id: 34, nom: "protege dent onix", description: "Équipement de qualité pour arts martiaux.", prix: 3000, image: "PHOTO/protege dent onix.jpeg", categorie: "protection" },
+  { id: 35, nom: "protege plaston homme SMAi", description: "Équipement de qualité pour arts martiaux.", prix: 15000, image: "PHOTO/protege plaston homme SMAi.jpeg", categorie: "protection" },
+  { id: 36, nom: "protege tibia roure", description: "Équipement de qualité pour arts martiaux.", prix: 15000, image: "PHOTO/protege tibia  roure.jpeg", categorie: "protection" },
+  { id: 37, nom: "protege tibia bleu", description: "Équipement de qualité pour arts martiaux.", prix: 15000, image: "PHOTO/protege tibia bleu.jpeg", categorie: "protection" },
+  { id: 38, nom: "protège-DENT", description: "Équipement de qualité pour arts martiaux.", prix: 3000, image: "PHOTO/protège-DENT.png", categorie: "protection" },
+
+  // Matériel
+  { id: 3, nom: "Sac d'équipement", description: "Idéal pour l'entraînement et compétition.", prix: 10000, image: "PHOTO/SAC%20DE%20MATERIEL.jpg", categorie: "materiel" },
+  { id: 8, nom: "cible manequin", description: "Équipement de qualité pour arts martiaux.", prix: 120000, image: "PHOTO/cible manequin.jpeg", categorie: "materiel" },
+  { id: 39, nom: "tapis", description: "1 mettre carré de tapis arts martiaux.", prix: 10000, image: "PHOTO/tapis.jpeg", categorie: "materiel" },
+
+  // Ensemble
+  { id: 9, nom: "ensemble kimono kumité smai bleu et rouge", description: "Équipement de qualité pour arts martiaux.", prix: 100000, image: "PHOTO/ensembe kimono kumité smai.webp", categorie: "ensemble" },
+  { id: 4, nom: "ensemble Ceinture arawaza", description: "ensemble Ceinture kumite bleu et rouge pour compétition.", prix: 7000, image: "PHOTO/CEINTURE-karat%C3%A9.jpeg", categorie: "ensemble" },
+  { id: 10, nom: "ensemble kimono kata arawaza bleu et rouge", description: "Équipement de qualité pour arts martiaux.", prix: 150000, image: "PHOTO/ensemble kimono kata arawaza bleu et rouge.jpeg", categorie: "ensemble" },
+  { id: 11, nom: "ensemble Kimono Kata SMAI bleu et rouge", description: "Équipement de qualité pour arts martiaux.", prix: 15000, image: "PHOTO/ensemble Kimono Kata SMAI bleu et rouge.jpg", categorie: "ensemble" },
+  { id: 12, nom: "ensemble Kimono Kata tokaido bleu et rouge", description: "Équipement de qualité pour arts martiaux.", prix: 150000, image: "PHOTO/ensemble Kimono Kata tokaido bleu et rouge.jfif", categorie: "ensemble" },
+    { id: 13, nom: "ensemble kimono kumite tokaido bleu et rouge", description: "Équipement de qualité pour arts martiaux.", prix: 100000, image: "PHOTO/ensemble kimono kumite tokaido bleu et rouge.jpg", categorie: "ensemble" },
+    { id: 14, nom: "ensenble kimono kumité arawaza zoro bleu et rouge ", description: "Équipement de qualité pour arts martiaux.", prix: 105000, image: "PHOTO/ensenble kimono kumité arawaza zoro bleu et rouge.jpeg", categorie: "ensemble" },
+    { id: 15, nom: "ensenble tibia arawaza bleu et rouge", description: "Équipement de qualité pour arts martiaux.", prix: 30000, image: "PHOTO/ensenble tibia arawaza bleu et rouge.jpeg", categorie: "ensemble" },
+    { id: 42, nom: "ensemble-kimono-shureido-rouge-et-bleue", description: "Équipement de qualité pour arts martiaux.", prix: 150000, image: "PHOTO/ensemble-kimono-shureido-rouge-et-bleue.jpg", categorie: "ensemble" },
+    { id: 43, nom: "ensemble dégresseur unisexe", description: "Équipement de qualité pour arts martiaux.", prix: 10000, image: "PHOTO/ensemble dégresseur unisexe.jpeg", categorie: "ensemble" }
 ];
+
 
 // Gestion du panier
 let panier = JSON.parse(localStorage.getItem('panier')) || [];
@@ -76,11 +119,19 @@ filterButtons.forEach(btn => {
     btn.classList.add('active');
 
     const category = btn.dataset.filter;
+
     cards.forEach(card => {
-      card.style.display = card.dataset.category === category || category === 'all' ? 'block' : 'none';
+      // Affiche tout si "all" est choisi
+      if (category === 'all') {
+        card.style.display = 'block';
+      } else {
+        // Affiche uniquement les produits correspondant à la catégorie
+        card.style.display = card.dataset.category === category ? 'block' : 'none';
+      }
     });
   });
 });
+
 
 // Animation fade-in des produits au scroll
 function checkCards() {
@@ -319,14 +370,10 @@ function soumettreCommande(event) {
     };
     
     if (modePaiement === 'wave') {
-        const confirmation = confirm(`Vous avez choisi le paiement via Wave.\n\nAprès confirmation, vous serez redirigé vers Wave pour effectuer le paiement.\nLe lien de paiement vous sera également envoyé par WhatsApp.\n\nConfirmer la commande ?`);
-        if (!confirmation) {
-            return; // Annuler si pas confirmé
-        }
-        // Redirection simulée vers Wave (remplacer par vrai lien si disponible)
-        alert('Redirection vers Wave... (Lien de paiement à intégrer)');
-        // window.location.href = 'https://wave.com/pay'; // Exemple
-    }
+    // Aller directement sur la page de paiement Wave
+    window.location.href = 'https://pay.wave.com/m/M_sn_QXSzdeTJkGo3/c/sn/';
+}
+
     
     envoyerCommandeWhatsApp(donnees);
 }
