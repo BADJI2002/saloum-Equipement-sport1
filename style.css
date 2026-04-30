@@ -786,13 +786,37 @@ body {
 }
 
 /* Footer */
-footer {
+.site-footer {
     background: #111;
     color: #fff;
     text-align: center;
     padding: 1rem;
-    margin-top: 2rem;
+    font-size: 0.9rem;
+    position: relative;
 }
+
+.site-footer .signature {
+    font-weight: bold;
+    color: #e63946;
+    /* couleur mise en avant */
+    animation: pulse 2s infinite;
+    cursor: pointer;
+}
+
+@keyframes pulse {
+    0% {
+        text-shadow: 0 0 5px rgba(230, 57, 70, 0.7);
+    }
+
+    50% {
+        text-shadow: 0 0 15px rgba(230, 57, 70, 1);
+    }
+
+    100% {
+        text-shadow: 0 0 5px rgba(230, 57, 70, 0.7);
+    }
+}
+
 
 /* Modal Panier */
 .modal-panier {
