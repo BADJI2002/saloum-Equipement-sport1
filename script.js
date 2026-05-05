@@ -86,7 +86,7 @@ const produits = [
   { id: 12, nom: "ensemble Kimono Kata tokaido bleu et rouge", description: "Équipement de qualité pour arts martiaux.", prix: 150000, image: "PHOTO/ensemble Kimono Kata tokaido bleu et rouge.jfif", categorie: "ensemble" },
     { id: 13, nom: "ensemble kimono kumite tokaido bleu et rouge", description: "Équipement de qualité pour arts martiaux.", prix: 100000, image: "PHOTO/ensemble kimono kumite tokaido bleu et rouge.jpg", categorie: "ensemble" },
     { id: 14, nom: "ensenble kimono kumité arawaza zoro bleu et rouge ", description: "Équipement de qualité pour arts martiaux.", prix: 105000, image: "PHOTO/ensenble kimono kumité arawaza zoro bleu et rouge.jpeg", categorie: "ensemble" },
-    { id: 15, nom: "ensenble tibia arawaza bleu et rouge", description: "Équipement de qualité pour arts martiaux.", prix: 30000, image: "PHOTO/ensenble tibia arawaza bleu et rouge.jpeg", categorie: "ensemble" },
+    { id: 15, nom: "ensenble tibia arawaza bleu et rouge", description: "Équipement de qualité pour arts martiaux.", prix: 30000, image: "PHOTO/ensenble tibia arawaza bleu et rouge.jpeg", categories: ["ensemble", "protection"] },
     { id: 42, nom: "ensemble-kimono-shureido-rouge-et-bleue", description: "Équipement de qualité pour arts martiaux.", prix: 150000, image: "PHOTO/ensemble-kimono-shureido-rouge-et-bleue.jpg", categorie: "ensemble" },
     { id: 43, nom: "ensemble dégresseur unisexe", description: "Équipement de qualité pour arts martiaux.", prix: 10000, image: "PHOTO/ensemble dégresseur unisexe.jpeg", categorie: "ensemble" },
 
@@ -242,6 +242,77 @@ function calculerTotal() {
 }
 
 // Afficher le panier (modal)
+function afficherPanier() {
+    let modal = document.getElementById('modal-panier');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'modal-panier';
+        modal.className = 'modal-panier';
+        document.body.appendChild(modal);
+    }
+
+    if (panier.length === 0) {
+        modal.innerHTML = `
+            <div class="contenu-panier">
+                <span class="fermer-panier" onclick="fermerPanier()">&times;</span>
+                <h2>Votre Panier</h2>
+                <button class="btn-continuer" onclick="fermerPanier()">Continuer vos achats</button>
+            </div>
+        `;
+    } else {
+        const total = calculerTotal();
+        modal.innerHTML = `
+            <div class="contenu-panier">
+                <span class="fermer-panier" onclick="fermerPanier()">&times;</span>
+                <h2>Votre Panier</h2>
+                <div class="liste-panier">
+                    ${panier.map(p => `
+                        <div class="item-panier">
+                            <img src="${p.image}" alt="${p.nom}" onerror="this.src='PHOTO/SAC%20DE%20MATERIEL.jpg'">
+                            <div class="details-item">
+                                <h4>${p.nom}</h4>
+                                <p class="prix-item">${p.prix.toLocaleString('fr-FR')} CFA</p>
+                                ${getTaillesDisponibles(p.categorie).length > 0 ? `
+                                    <label for="taille-${p.id}">Taille :</label>
+                                    <select id="taille-${p.id}" onchange="changerTaille(${p.id}, this.value)">
+                                        <option value="">Choisir</option>
+                                        ${getTaillesDisponibles(p.categorie).map(t => `
+                                            <option value="${t}" ${p.taille === t ? 'selected' : ''}>${t}</option>
+                                        `).join('')}
+                                    </select>
+                                ` : ''}
+                            </div>
+                            <div class="quantite-controls">
+                                <button onclick="modifierQuantite(${p.id}, -1)">-</button>
+                                <span>${p.quantite}</span>
+                                <button onclick="modifierQuantite(${p.id}, 1)">+</button>
+                            </div>
+                            <button class="supprimer-item" onclick="supprimerDuPanier(${p.id})">&times;</button>
+                        </div>
+                    `).join('')}
+                </div>
+                <div class="total-panier">
+                    <h3>Total: ${total.toLocaleString('fr-FR')} CFA</h3>
+                </div>
+                <button class="btn-commander" onclick="afficherFormulaireCommande()">
+                    Passer la commande
+                </button>
+            </div>
+        `;
+    }
+
+    modal.style.display = 'flex';
+
+    // Fermer le panier en cliquant à l'extérieur du cadre panier
+    const fermerSurClicExterieur = (e) => {
+        if (modal.style.display === 'flex' && !e.target.closest('.contenu-panier') && !e.target.closest('.cart-icon')) {
+            fermerPanier();
+            document.removeEventListener('click', fermerSurClicExterieur);
+        }
+    };
+    setTimeout(() => document.addEventListener('click', fermerSurClicExterieur), 100);
+}
+
 function getTaillesDisponibles(categorie) {
     if (categorie === 'kimono' || categorie === 'ensemble') {
         return ['160', '170', '180', '190', '200'];
@@ -274,7 +345,6 @@ function afficherPanier() {
             <div class="contenu-panier">
                 <span class="fermer-panier" onclick="fermerPanier()">&times;</span>
                 <h2>Votre Panier</h2>
-                <p class="panier-vide">Votre panier est vide</p>
                 <button class="btn-continuer" onclick="fermerPanier()">Continuer vos achats</button>
             </div>
         `;
