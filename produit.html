@@ -19,7 +19,7 @@
 
     .produit-header {
       display: flex;
-      justify-content: space-between;
+      gap: 10px;
       align-items: center;
       margin-bottom: 15px;
     }
@@ -174,32 +174,33 @@
     <button class="burger" type="button">&#9776;</button>
   </nav>
 
-  <!-- Détail du produit -->
-  <div class="produit-detail">
-    <div class="produit-header">
-      <h1 id="nom"></h1>
-      <a href="index.html#produits" class="btn-retour">← Retour</a>
+  <div class="container">
+    <!-- Détail du produit -->
+    <div class="produit-detail">
+      <div class="produit-header">
+        <a href="index.html#produits" class="btn-retour"><img src="PHOTO/arrow-circle-left_6407369.png" alt="Retour"></a>
+        <h1 id="nom"></h1>
+      </div>
+
+      <!-- Galerie photos -->
+      <div class="produit-images">
+        <img id="image-principale" src="" alt="Produit">
+        <img id="image-secondaire1" src="" alt="Produit secondaire">
+        <img id="image-secondaire2" src="" alt="Produit secondaire">
+      </div>
+
+      <!-- Zoom -->
+      <div class="zoom" id="zoom">
+        <span onclick="fermerZoom()">✖</span>
+        <img id="zoom-img" src="">
+      </div>
+
+      <p id="description"></p>
+      <div class="prix" id="prix"></div>
+
+      <button class="btn-commander" id="btn-commander">Commander</button>
     </div>
-
-    <!-- Galerie photos -->
-    <div class="produit-images">
-      <img id="image-principale" src="" alt="Produit">
-      <img id="image-secondaire1" src="" alt="Produit secondaire">
-      <img id="image-secondaire2" src="" alt="Produit secondaire">
-    </div>
-
-    <!-- Zoom -->
-    <div class="zoom" id="zoom">
-      <span onclick="fermerZoom()">✖</span>
-      <img id="zoom-img" src="">
-    </div>
-
-    <p id="description"></p>
-    <div class="prix" id="prix"></div>
-
-    <button class="btn-commander" id="btn-commander">Commander</button>
   </div>
-
   <script>
     // Fonctions zoom
     function ouvrirZoom(src) {
@@ -225,19 +226,37 @@
         const imageSecondaire2 = document.getElementById("image-secondaire2");
 
         // Charger images (dupliquer principale pour secondaires)
-        const imgSrc = produit.image;
-        imagePrincipale.src = imgSrc;
-        imageSecondaire1.src = imgSrc;
-        imageSecondaire2.src = imgSrc;
-
-        // Click listeners pour zoom
-        imagePrincipale.onclick = () => ouvrirZoom(imgSrc);
-        imageSecondaire1.onclick = () => ouvrirZoom(imgSrc);
-        imageSecondaire2.onclick = () => ouvrirZoom(imgSrc);
+        // Utiliser images array si disponible, sinon dupliquer main image
+        const images = produit.images || [produit.image, produit.image, produit.image];
+        imagePrincipale.src = images[0];
+        imageSecondaire1.src = images[1];
+        imageSecondaire2.src = images[2];
+        
+        // Click listeners pour zoom (chaque image sa propre src)
+        imagePrincipale.onclick = () => ouvrirZoom(images[0]);
+        imageSecondaire1.onclick = () => ouvrirZoom(images[1]);
+        imageSecondaire2.onclick = () => ouvrirZoom(images[2]);
 
         document.getElementById("nom").textContent = produit.nom;
         document.getElementById("description").textContent = produit.description;
         document.getElementById("prix").textContent = produit.prix.toLocaleString('fr-FR') + " CFA";
+
+        //  le code pour les images
+        document.getElementById("image-principale").src = produit.image;
+
+        if (produit.images && produit.images.length > 1) {
+          document.getElementById("image-secondaire1").src = produit.images[1];
+        }
+        if (produit.images && produit.images.length > 2) {
+          document.getElementById("image-secondaire2").src = produit.images[2];
+        }
+        // Zoom sur l'image cliquée
+        document.querySelectorAll(".produit-images img").forEach(img => {
+          img.addEventListener("click", () => {
+            document.getElementById("zoom-img").src = img.src; // 👉 prend la source de l'image cliquée
+            document.getElementById("zoom").style.display = "flex";
+          });
+        });
 
         const btnCommander = document.getElementById("btn-commander");
 
